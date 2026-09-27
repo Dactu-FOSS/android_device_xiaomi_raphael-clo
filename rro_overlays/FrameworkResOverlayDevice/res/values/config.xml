@@ -357,4 +357,10 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+    <!-- Screen-off fingerprint unlock (UDFPS). The long-press sensor is the
+         org.lineageos.sensor.udfps wake-up sensor from sensors.udfps, fed by
+         the Goodix touch driver's fp_state node, which reports FOD presses
+         while the panel is off. -->
+    <bool name="config_screen_off_udfps_enabled">true</bool>
+    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
 </resources>

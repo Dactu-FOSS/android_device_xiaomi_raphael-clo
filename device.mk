@@ -70,3 +70,10 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/raphael/raphael-vendor.mk)
+
+# Screen-off fingerprint unlock. sensors.udfps (hardware/xiaomi/sensors) turns
+# the touch driver's /sys/touchpanel/fp_state into the wake-up
+# org.lineageos.sensor.udfps sensor that SystemUI's doze path listens to; it is
+# loaded through vendor/etc/sensors/hals.conf next to sensors.ssc.
+PRODUCT_PACKAGES += \
+    sensors.udfps
