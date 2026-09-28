@@ -357,6 +357,14 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <!-- Leave the ambient light sensor type empty so the display uses
+         SensorManager.getDefaultSensor(TYPE_LIGHT). Matching by type picks the
+         first android.sensor.light in the list, which here is the tcs3701
+         wakeup variant; it never delivers events, so the ambient lux stays
+         invalid and auto-brightness never adjusts. The default sensor is the
+         non-wakeup variant, which does. -->
+    <string name="config_displayLightSensorType" translatable="false"></string>
     <!-- Screen-off fingerprint unlock (UDFPS). The long-press sensor is the
          org.lineageos.sensor.udfps wake-up sensor from sensors.udfps, fed by
          the Goodix touch driver's fp_state node, which reports FOD presses
