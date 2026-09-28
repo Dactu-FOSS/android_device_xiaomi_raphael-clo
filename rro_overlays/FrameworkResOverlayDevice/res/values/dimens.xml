@@ -27,4 +27,9 @@
 
     <!-- Radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">84px</dimen>
+
+    <!-- Keep status bar content clear of the rounded corners. SystemUI only
+         reserves the privacy dot's width on the right, so without this the
+         left-aligned clock starts right on the corner curve. -->
+    <dimen name="rounded_corner_content_padding">24dp</dimen>
 </resources>
