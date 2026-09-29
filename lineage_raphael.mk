@@ -17,6 +17,12 @@ TARGET_INCLUDE_ACCORD := true
 TARGET_CALL_RECORDING_SUPPORTED := true
 WITH_GMS := true
 
+# DerpFest only uncrypts an OTA (block map in /cache) when this is set; without
+# it recovery is handed the /data path, which Lineage recovery can't mount on an
+# encrypted device, and the install aborts.
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.recovery_update=true
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
