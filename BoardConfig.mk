@@ -29,3 +29,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Inherit from the proprietary version
 include vendor/xiaomi/raphael/BoardConfigVendor.mk
+
+# MIUI Camera board settings (sepolicy, props), if present
+ifneq ($(wildcard device/xiaomi/miuicamera/BoardConfig.mk),)
+include device/xiaomi/miuicamera/BoardConfig.mk
+endif
