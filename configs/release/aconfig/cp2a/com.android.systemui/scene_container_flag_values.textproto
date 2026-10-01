@@ -1,0 +1,8 @@
+# Scene container makes the shade jankier on this device and races FOD when
+# the screen is turned off during the unlock animation.
+flag_value {
+  package: "com.android.systemui"
+  name: "scene_container"
+  state: DISABLED
+  permission: READ_ONLY
+}

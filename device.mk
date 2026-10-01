@@ -66,6 +66,10 @@ PRODUCT_COPY_FILES += \
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
 
+# Release config: SystemUI flag overrides for cp2a (scene_container and
+# dual_shade off). Appended so it comes after vendor/lineage's map.
+PRODUCT_RELEASE_CONFIG_MAPS += $(LOCAL_PATH)/configs/release/release_config_map.textproto
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

@@ -1,0 +1,13 @@
+# raphael's additions to the cp2a release config. This map is deliberately not
+# in device/*/*/release/, where it would be auto-discovered and sorted before
+# vendor/*: device.mk appends it via PRODUCT_RELEASE_CONFIG_MAPS, so its flag
+# values come after (and override) vendor/lineage's.
+default_containers: "product"
+default_containers: "system"
+default_containers: "system_ext"
+default_containers: "vendor"
+
+release_config {
+    name: "cp2a"
+    flag_value_files: "release_configs/cp2a.textproto"
+}
