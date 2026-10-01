@@ -32,6 +32,7 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
     libmegface \
+    libmpbase_shim \
     libpiex_shim
 
 # Camera motor
